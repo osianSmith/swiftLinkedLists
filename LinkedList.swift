@@ -64,14 +64,17 @@ class LinkedLists {
 	//this adds the element to the end of the list
 	func addsElememt(newElment : Any) {
 		let newNode = Node(element: newElment)
-		if head == nil {
+		if head? == nil {
 			head = newNode
 			tail = newNode
+			nodeCount = 1
 		}
 		else {
 			head!.createHead(newNode: newNode) // resvusive
+			nodeCount ++
 		}
-		self.nodeCount ++
+		head!
+		tail!
 	}
 	
 }
